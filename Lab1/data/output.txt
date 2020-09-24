@@ -1,1 +1,4 @@
 73
+atgaccgggatactgataaaaaaaagggggggggcgtacacattagataaacgtatg-a--a-gtacgttagactcggcgccgccg
+||||| |||||||||||   ||||||| || |||||||||||||||   |||||||| |  | |||||||||||||||||||||||
+atgacggggatactgat---aaaaaggaggcgggcgtacacattag---aacgtatgaacgatgtacgttagactcggcgccgccg

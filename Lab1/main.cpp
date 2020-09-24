@@ -65,9 +65,9 @@ SeqAlignment::SeqAlignment(const sequence& s0, const sequence& s1,
     while (pos.first || pos.second) {
         auto prev_pos = prev[pos.first][pos.second];
         if (prev_pos.first == pos.first)
-            alignment.push_back(MatchType::Gap1);
-        else if (prev_pos.second == pos.second)
             alignment.push_back(MatchType::Gap0);
+        else if (prev_pos.second == pos.second)
+            alignment.push_back(MatchType::Gap1);
         else if (s0[pos.first - 1] == s1[pos.second - 1])
             alignment.push_back(MatchType::Match), num_match++;
         else
@@ -80,7 +80,26 @@ SeqAlignment::SeqAlignment(const sequence& s0, const sequence& s1,
 std::ostream& operator<<(std::ostream& ofs, const SeqAlignment& as) {
     ofs << as.num_match << std::endl;
 
-    // TODO: Print result to `ofs`.
+    int idx = 0;
+    for (auto i : as.alignment) {
+        if (i == SeqAlignment::Gap0) ofs << '-';
+        else ofs << as.s0[idx++];
+    }
+    ofs << std::endl;
+
+    for (auto i : as.alignment) {
+        if (i == SeqAlignment::Match) ofs << '|';
+        else ofs << ' ';
+    }
+    ofs << std::endl;
+
+    idx = 0;
+    for (auto i : as.alignment) {
+        if (i == SeqAlignment::Gap1) ofs << '-';
+        else ofs << as.s1[idx++];
+    }
+    ofs << std::endl;
+
     return ofs;
 }
 
