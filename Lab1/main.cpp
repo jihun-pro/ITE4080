@@ -1,8 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include <string>
 #include <vector>
-#include <algorithm>
 
 using sequence = std::string;
 
@@ -16,8 +14,8 @@ struct SeqAlignment {
     Match, MisMatch, Gap0, Gap1
   };
   std::vector<MatchType> alignment;
-  int num_match;
-  __unused int max_score;
+  int num_match{0};
+  __unused int max_score{0};
 
   const sequence& s0;
   const sequence& s1;
