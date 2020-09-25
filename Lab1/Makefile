@@ -1,5 +1,5 @@
 all:
-	g++ -std=c++14 -o main main.cpp
+	g++ -std=c++14 -o bin/main src/main.cpp
 
 clean:
-	rm main
+	rm bin/main
