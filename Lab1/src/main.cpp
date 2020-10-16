@@ -33,11 +33,11 @@ SeqAlignment::SeqAlignment(const sequence& s0, const sequence& s1,
 
     // Initialization
     for (int i = 0; i <= s0.size(); i++) {
-        score[i][0] = 0;
+        score[i][0] = i * score_indel;
         prev[i][0] = {i - 1, 0};
     }
     for (int i = 0; i <= s1.size(); i++) {
-        score[0][i] = 0;
+        score[0][i] = i * score_indel;
         prev[0][i] = {0, i - 1};
     }
 
